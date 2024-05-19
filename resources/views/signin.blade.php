@@ -1,8 +1,7 @@
  <!DOCTYPE html>
 
 <html lang="en">
-@include('alert.success-msg')
-@include('alert.error-msg')
+
 
 <head>
     <meta charset="utf-8">
@@ -55,9 +54,9 @@
 
 
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        {{-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="{{ asset('js/signup.js') }}"></script>
+        <script src="{{ asset('js/signup.js') }}"></script> --}}
 </body>
 
 </html>
@@ -75,7 +74,7 @@ if(document.form.username.value=='' && document.form.fname.value!='' && document
 }" /></div>
     <div><label for="username">Username: </label><input type="text" name="username" id="username" /></div>
 </form> --}}
-<script>
+{{-- <script>
     function generateUsername(formName) {
         var form = document.forms[formName];
         var firstName = form.firstName.value;
@@ -88,7 +87,7 @@ if(document.form.username.value=='' && document.form.fname.value!='' && document
           username = username.replace(/-+/g, ''); // Remove hyphens
           username = username.toLowerCase(); // Convert to lowercase
           form.username.value = username;
-</script>
+</script> --}}
 @error('name')
 <div class="alert alert-danger">{{ $message }}</div>
 @enderror

@@ -1,0 +1,261 @@
+ /* {
+    background: linear-gradient(45deg, #3145cb, #1cc0fb, #ff006f, #6dce6e, #02b505);
+} */
+
+ body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     /* background: linear-gradient(45deg, #3145cb, #1cc0fb, #ff006f, #6dce6e, #02b505);
+     */
+     /* background-color: burlywood; */
+     /* background-image: url('../img/home_rental.jpg'); */
+     background-size: cover;
+
+ }
+
+ .wrapper {
+     position: center;
+     width: 400px;
+     height: 600px;
+     background: transparent;
+     border: 2px solid rgba(255, 255, 255, .5);
+     border-radius: 20px;
+     backdrop-filter: blur(20px);
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* overflow: hidden; */
+
+ }
+
+ .wrapper form-box-registration {
+     position: center;
+     width: 600px;
+     height: 600px;
+     background: transparent;
+     border: 2px solid rgba(255, 255, 255, .5);
+     border-radius: 20px;
+     backdrop-filter: blur(20px);
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* overflow: hidden; */
+ }
+
+ .wrapper form-box.login {
+     position: center;
+     width: 400px;
+     height: 400px;
+     background: transparent;
+     border: 2px solid rgba(255, 255, 255, .5);
+     border-radius: 20px;
+     backdrop-filter: blur(20px);
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* .wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 700px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+
+
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400PX);
+}
+
+.wrapper .form-box.registration {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+
+
+}
+
+.wrapper.active .form-box.registration {
+    transition: transform .18s ease;
+    transform: translateX(0);
+
+
+} */
+
+
+
+ .wrapper h2 {
+     font-size: 2em;
+     color: #162938;
+     text-align: center;
+
+ }
+
+ .input-box {
+     position: relative;
+     width: 100%;
+     height: 50px;
+     border-bottom: 2px solid #162938;
+     margin: 30px 0;
+ }
+
+ .input-box label {
+     position: absolute;
+     top: 50%;
+     left: 5px;
+     transform: translateY(-50%);
+     font-size: 1em;
+     color: #162938;
+     font-weight: 500;
+     pointer-events: none;
+     transition: .5s;
+ }
+
+ .input-box input:focus~label,
+ .input-box input:valid~label {
+     top: -5px;
+ }
+
+ .input-box input {
+     width: 100%;
+     height: 100%;
+     background: transparent;
+     border: none;
+     outline: none;
+     color: black;
+     font-weight: 600px;
+     padding: 0 35px 0 5px;
+
+
+ }
+
+ .input-box .icon {
+     position: absolute;
+     right: 8px;
+     font-size: 1.2em;
+     color: #162938;
+     line-height: 57px;
+
+ }
+
+ .remember-forgot {
+     font-size: .9em;
+     color: #162938;
+     font-weight: 500;
+     margin: -15px 0 15px;
+     display: flex;
+     justify-content: space-between;
+
+ }
+
+ .remember-forgot label input {
+     accent-color: #162938;
+     margin-right: 3px;
+
+ }
+
+ .remember-forgot a {
+     color: #162938;
+     text-decoration: none;
+
+ }
+
+ .remember-forgot a:hover {
+     text-decoration: underline;
+
+ }
+
+ .btn {
+     width: 100%;
+     height: 45px;
+     background: #162938;
+     border: none;
+     outline: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 1em;
+     color: #fff;
+     font-weight: 500;
+
+
+ }
+
+ .login-register {
+     font-size: .9em;
+     color: #162938;
+     text-align: center;
+     font-weight: 500;
+     margin: 25px 0 10px;
+
+ }
+
+ .login-register p a {
+     color: #162938;
+     text-decoration: none;
+     font-weight: 600;
+ }
+
+ .login-register p a:hover {
+     text-decoration: underline;
+
+ }
+
+ .alert {
+     position: fixed;
+     top: 0;
+     right: 0;
+     left: 0;
+     z-index: 9999;
+     /* Adjust the z-index to ensure it appears above other elements */
+     text-align: center;
+     /* Optional: center the content within the alert */
+     background-color: #f0f0f0;
+     /* Background color for the alert */
+     border: 1px solid #ccc;
+     /* Border styles for the alert */
+     padding: 15px;
+     /* Padding for the content within the alert */
+     border-radius: 5px;
+     /* Rounded corners for the alert */
+ }
+
+ .forgotbox {
+     position: center;
+     width: 400px;
+     height: 300px;
+     background: transparent;
+     border: 2px solid rgba(255, 255, 255, .5);
+     border-radius: 20px;
+     backdrop-filter: blur(20px);
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .forgotbox h2 {
+     font-size: 2em;
+     color: #162938;
+     text-align: center;
+     position: top;
+     font-style: underline;
+ }

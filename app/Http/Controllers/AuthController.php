@@ -35,50 +35,51 @@ class AuthController extends Controller
     }
 
     public function register(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'id_number' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed',
-        ], [
-            'email.required' => 'The email field is required.',
-            'email.email' => 'Please enter a valid email address.',
-            'email.unique' => 'This email is already in use.',
-            'password.required' => 'The password field is required.',
-            'password.min' => 'The password must be at least 6 characters.',
-            'password.confirmed' => 'The passwords do not match.',
-        ]);
+{
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'id_number' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'password' => 'required|min:6|confirmed',
+    ], [
+        'email.required' => 'The email field is required.',
+        'email.email' => 'Please enter a valid email address.',
+        'email.unique' => 'This email is already in use.',
+        'password.required' => 'The password field is required.',
+        'password.min' => 'The password must be at least 6 characters.',
+        'password.confirmed' => 'The passwords do not match.',
+    ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $verificationToken = $this->generateUniqueVerificationToken();
-
-        try {
-            $user = new User();
-            $user->name = $request->input('name'); // Ensure consistent naming
-            $user->id_number = $request->input('id_number'); // Ensure consistent naming
-            $user->email = $request->input('email');
-            $user->password = bcrypt($request->input('password'));
-            $user->verification_token = $verificationToken;
-            $user->token_expiration_time = now()->addHours(2);
-            $user->is_verified = false;
-            $user->save();
-        } catch (Exception $e) {
-            return redirect()->route('register')->with('error', 'Account creation failed');
-        }
-
-        $tokenLink = route('verify', ['token' => $verificationToken]);
-
-        try {
-            Mail::to($user->email)->send(new VerificationMail($tokenLink));
-            return redirect()->route('login')->with('success', 'Account created successfully, check your email');
-        } catch (Exception $e) {
-            return redirect()->route('register')->with('error', 'Failed to send verification email');
-        }
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
     }
+
+    $verificationToken = $this->generateUniqueVerificationToken();
+
+    try {
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->id_number = $request->input('id_number');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+        $user->verification_token = $verificationToken;
+        $user->token_expiration_time = now()->addHours(2);
+        $user->is_verified = false;
+        $user->save();
+    } catch (Exception $e) {
+        return redirect()->route('register')->with('error', 'Account creation failed');
+    }
+
+    $tokenLink = route('verify', ['token' => $verificationToken]);
+
+    try {
+        Mail::to($user->email)->send(new VerificationMail($tokenLink));
+        return redirect()->route('login')->with('success', 'Account created successfully. Please check your email for verification instructions.');
+    } catch (Exception $e) {
+        return redirect()->route('register')->with('error', 'Failed to send verification email');
+    }
+}
+
 
     private function generateUniqueVerificationToken()
     {

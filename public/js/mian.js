@@ -99,4 +99,23 @@ const marker = new google.maps.Marker({
     map:map
 });
 }
+ // Function to close alert
+        function closeAlert(element) {
+            element.parentElement.style.display = 'none';
+        }
+
+        // Attach click event to close buttons
+        document.querySelectorAll('.alert .close').forEach(function(element) {
+            element.onclick = function() {
+                closeAlert(this);
+            };
+        });
+
+        // Auto close alerts after 5 seconds
+        setTimeout(function() {
+            document.querySelectorAll('.alert').forEach(function(element) {
+                element.style.display = 'none';
+            });
+        }, 5000);
+    
 

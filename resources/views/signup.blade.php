@@ -29,16 +29,18 @@
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
 
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                    <input type="text" name="username" id="username" required />
-                    <label>Username</label>
-                </div>
+               <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="person-circle"></ion-icon>
+                </span>
+                <input type="text" name="id_number" id="id_number" required />
+                <label for="id_number">ID Number</label>
+            </div>
 
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email"name="userEmail" required />
+                    <input type="email"name="email" required />
                     <label>Email</label>
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>

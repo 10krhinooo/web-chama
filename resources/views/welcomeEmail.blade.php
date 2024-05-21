@@ -200,7 +200,7 @@
 
                                                             <div
                                                                 style="font-size: 36px; font-weight: 700; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                <p style="line-height: 140%;">𝓗𝓾𝓶𝓫𝓵𝓮𝓐𝓫𝓸𝓭𝓮</p>
+                                                                <p style="line-height: 140%;">𝑾𝑬𝑩𝑪𝑯𝑨𝑴𝑨</p>
                                                             </div>
 
                                                         </td>
@@ -354,8 +354,7 @@
                                                                 <p style="font-size: 14px; line-height: 160%;"><span
                                                                         style="font-size: 18px; line-height: 28.8px;">You're
                                                                         almost ready to get started. Please click on the
-                                                                        button below to verify your email address and
-                                                                        enjoy your stay with us!
+                                                                        button below to verify your email address.
                                                                     </span></p>
                                                             </div>
 
@@ -406,7 +405,7 @@
                                                                         style="font-size: 18px; line-height: 28.8px;">Thanks,</span>
                                                                 </p>
                                                                 <p style="line-height: 160%; font-size: 14px;"><span
-                                                                        style="font-size: 18px; line-height: 28.8px;">HumbleAbode
+                                                                        style="font-size: 18px; line-height: 28.8px;">Webchama
                                                                         Team</span></p>
                                                             </div>
 

@@ -13,6 +13,32 @@
 </head>
 
 <body>
+    <div class="alert-container">
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+            <span class="close">&times;</span>
+        </div>
+        @endif
+
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+            <span class="close">&times;</span>
+        </div>
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            <span class="close">&times;</span>
+        </div>
+        @endif
+    </div>
     <div class="wrapper">
 
         <div class="form-box.login">
@@ -39,7 +65,7 @@
                 <div class="remember-forgot">
                     <label>
                         <input type="checkbox">Remember me</label>
-                    <a href="#">Forgot password?</a>
+                    <a href="{{route('forgot.password.form')}}">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">login</button>
                 <div class="login-register">
@@ -57,6 +83,26 @@
         {{-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script src="{{ asset('js/signup.js') }}"></script> --}}
+       <script>
+        // Function to close alert
+        function closeAlert(element) {
+        element.parentElement.style.display = 'none';
+        }
+
+        // Attach click event to close buttons
+        document.querySelectorAll('.alert .close').forEach(function(element) {
+        element.onclick = function() {
+        closeAlert(this);
+        };
+        });
+
+        // Auto close alerts after 5 seconds
+        setTimeout(function() {
+        document.querySelectorAll('.alert').forEach(function(element) {
+        element.style.display = 'none';
+        });
+        }, 5000);
+        </script>
 </body>
 
 </html>

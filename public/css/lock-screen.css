@@ -17,15 +17,16 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Wrapper Styling */
-.wrapper {
-    width: 400px;
+/* Container Styling */
+.lock-screen-container {
+    width: 300px;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,21 +40,23 @@ body {
 }
 
 /* Heading Styling */
-.wrapper h2 {
+.lock-screen-container h2 {
     font-size: 2em;
     color: #fff;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Input Box Styling */
-.input-box {
-    position: relative;
+/* Form Styling */
+.lock-screen-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin: 20px 0;
 }
 
-.input-box input {
+/* Input Field Styling */
+.lock-screen-container input[type="password"] {
     width: 100%;
     padding: 10px;
     background: transparent;
@@ -63,30 +66,15 @@ body {
     color: #fff;
     font-size: 1em;
     transition: border-color 0.5s;
+    margin-bottom: 15px;
 }
 
-.input-box input:focus {
+.lock-screen-container input[type="password"]:focus {
     border-color: #ff006f;
 }
 
-.input-box label {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    color: #fff;
-    pointer-events: none;
-    transition: transform 0.5s, font-size 0.5s;
-}
-
-.input-box input:focus~label,
-.input-box input:valid~label {
-    transform: translateY(-30px);
-    font-size: 0.8em;
-    color: #ff006f;
-}
-
 /* Button Styling */
-.btn {
+.lock-screen-container button {
     width: 100%;
     padding: 15px;
     background: #ff006f;
@@ -99,73 +87,33 @@ body {
     transition: background 0.5s, transform 0.2s;
 }
 
-.btn:hover {
+.lock-screen-container button:hover {
     background: #ff3366;
     transform: scale(1.05);
 }
 
-/* Remember and Forgot Password Styling */
-.remember-forgot {
+/* Error Message Styling */
+.lock-screen-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
+}
+
+.lock-screen-container ul li {
+    color: #ff0000;
     font-size: 0.9em;
+    margin-bottom: 5px;
+    background: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.remember-forgot a {
-    color: #ff006f;
-    text-decoration: none;
-    transition: text-decoration 0.3s;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-/* Additional Styling for Alert Messages */
-.alert {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease;
-}
-
-.alert-success {
-    background: #d4edda;
-    color: #155724;
-}
-
-.alert-danger {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.alert .close {
+/* Close Button Styling for Error Messages */
+.lock-screen-container .alert .close {
     cursor: pointer;
     font-size: 1.2em;
-}
-
-/* Additional Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.mb-10 {
-    margin-bottom: 10px;
+    line-height: 1;
+    padding: 0 5px;
+    color: #ff0000;
 }

@@ -1,195 +1,124 @@
-/* styles.css
-
-/* Reset default browser styles */
-/*body, h1, h2, h3, p, ul, li, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
+/* Profile details container */
 .profile-details {
-    background-color: #fff;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
     padding: 20px;
-    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.profile-details p {
-    margin-bottom: 10px;
-}
-
-.profile-actions form {
-    margin-bottom: 10px;
-}
-
-.profile-actions form button {
-    background-color: #333;
+/* Profile details heading */
+.profile-details h2 {
+    font-size: 24px;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.profile-actions form button:hover {
-    background-color: #555;
-}
-
-.edit-profile form {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.edit-profile form label {
-    display: block;
+/* Profile details paragraphs */
+.profile-details p {
+    font-size: 16px;
+    color: #fff;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.edit-profile form input {
+/* Profile photo */
+.profile-details img {
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions container */
+.profile-actions {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Profile actions heading */
+.profile-actions h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions form labels */
+.profile-actions label {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions input fields */
+.profile-actions input[type="text"],
+.profile-actions input[type="email"],
+.profile-actions input[type="file"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.edit-profile form button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.edit-profile form button:hover {
-    background-color: #555;
-}
-
-.delete-account form button {
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.delete-account form button:hover {
-    background-color: #cc0000;
-} 
-
-.profile-details, .profile-actions {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.profile-details img {
-    border-radius: 50%;
-    margin-top: 10px;
+.profile-actions input[type="text"]:focus,
+.profile-actions input[type="email"]:focus,
+.profile-actions input[type="file"]:focus {
+    border-color: #ff006f;
+    box-shadow: 0 0 10px rgba(255, 0, 111, 0.5);
 }
 
-.profile-actions form {
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-actions form label {
-    margin-top: 10px;
-}
-
-.profile-actions form input, .profile-actions form button {
-    margin-top: 5px;
-}*/
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
-.profile-details, .profile-actions {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-}
-
-.profile-details img {
-    border-radius: 50%;
-    margin-top: 10px;
-}
-
-.profile-actions form {
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-actions form label {
-    margin-top: 10px;
-}
-
-.profile-actions form input, .profile-actions form button {
-    margin-top: 5px;
-}
-
-.profile-actions h2 {
-    margin-bottom: 10px;
-}
-
+/* Profile actions submit button */
 .profile-actions button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: #ff006f;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .profile-actions button:hover {
-    background-color: #45a049;
+    background-color: #ff3366;
+    transform: scale(1.05);
 }
 
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Additional Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}

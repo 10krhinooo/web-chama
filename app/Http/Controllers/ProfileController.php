@@ -43,6 +43,30 @@ class ProfileController extends Controller
         return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }
 
+
+    public function uploadPhoto(Request $request)
+
+    {
+    $user = Auth::user();
+
+    if ($request->hasFile('profile_photo')) {
+        // Delete old profile photo if it exists
+        if ($user->profile_photo_path) {
+            Storage::disk('public')->delete($user->profile_photo_path);
+        }
+
+        // Store the new profile photo
+        $photoPath = $request->file('profile_photo')->store('profile_photos', 'public');
+        $user->profile_photo_path = $photoPath;
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Profile photo updated successfully.');
+    }
+
+    return redirect()->route('profile')->with('error', 'Failed to upload photo.');
+    }
+
+
     public function deleteAccount(Request $request)
     {
         $user = Auth::user();

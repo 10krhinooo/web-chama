@@ -40,8 +40,9 @@
     <div class="wrapper">
         <div class="form-box.login">
             <h2>Reset password</h2>
-            <form action="{{route ('reset.password')}}" method="POST" name="loginForm">
+            <form action="{{route ('password.reset')}}" method="POST" name="loginForm">
                 @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>

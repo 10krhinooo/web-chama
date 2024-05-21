@@ -12,6 +12,6 @@ class ResetConfirmationMail extends Mailable
     public function build()
     {
         return $this->subject('Password Reset Confirmation')
-                    ->view('emails.reset-confirmation');
+                    ->view('reset.confirmation');
     }
 }

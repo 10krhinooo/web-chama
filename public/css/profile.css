@@ -1,0 +1,124 @@
+/* Profile details container */
+.profile-details {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Profile details heading */
+.profile-details h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile details paragraphs */
+.profile-details p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile photo */
+.profile-details img {
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions container */
+.profile-actions {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Profile actions heading */
+.profile-actions h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions form labels */
+.profile-actions label {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile actions input fields */
+.profile-actions input[type="text"],
+.profile-actions input[type="email"],
+.profile-actions input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-actions input[type="text"]:focus,
+.profile-actions input[type="email"]:focus,
+.profile-actions input[type="file"]:focus {
+    border-color: #ff006f;
+    box-shadow: 0 0 10px rgba(255, 0, 111, 0.5);
+}
+
+/* Profile actions submit button */
+.profile-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff006f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.profile-actions button:hover {
+    background-color: #ff3366;
+    transform: scale(1.05);
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Additional Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}

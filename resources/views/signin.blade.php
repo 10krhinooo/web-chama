@@ -64,7 +64,7 @@
                 </div>
                 <div class="remember-forgot">
                     <label>
-                        <input type="checkbox">Remember me</label>
+                        {{-- <input type="checkbox">Remember me</label> --}}
                     <a href="{{route('forgot.password.form')}}">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">login</button>

@@ -11,7 +11,7 @@
     <title>Register</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registration.css') }}">
 </head>
 
 <body>
@@ -86,13 +86,13 @@
 
                 </div>
 
-                <div class="remember-forgot">
+                {{-- <div class="remember-forgot">
                     <label><input type="checkbox" /> I agree to terms and conditions</label>
-                </div>
+                </div> --}}
                 <button type="submit" class="btn">Register</button>
                 <div class="login-register">
                     <p>
-                        Already have an account?<a href="{{route('login')}}" class="login-link">Login</a>
+                        Already have an account? <a href="{{route('login')}}" class="login-link">Login</a>
 
                     </p>
                 </div>

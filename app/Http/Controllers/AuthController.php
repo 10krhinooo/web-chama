@@ -174,7 +174,7 @@ class AuthController extends Controller
         $user->save();
 
         // Send a reset confirmation email
-        // Mail::to($user->email)->send(new ResetConfirmationMail());
+        Mail::to($user->email)->send(new ResetConfirmationMail());
 
         // Redirect to the login page with a success message
         return redirect()->route('login')->with('success', 'Password has been reset.');

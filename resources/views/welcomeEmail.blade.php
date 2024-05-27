@@ -557,7 +557,7 @@
                                                                             <tr style="vertical-align: top">
                                                                                 <td align="left" valign="middle"
                                                                                     style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                                                    <a href="https://youtu.be/dQw4w9WgXcQ?si=ZFKNHdijRBXP10ji"
+                                                                                    <a href="#"
                                                                                         title="YouTube" target="_blank">
                                                                                         <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/youtube.png"
                                                                                             alt="YouTube"

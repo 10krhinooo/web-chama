@@ -44,9 +44,9 @@
                 <span class="icon">
                     <ion-icon name="mail"></ion-icon>
                 </span>
-                <input type="int" name="id_number" required>
-                <label>ID number</label>
-                <x-input-error :messages="$errors->get('ID')" class="mt-2" />
+                <input type="email" name="email" required>
+                <label>Email</label>
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <button type="submit" class="btn">Submit</button>
         </form>

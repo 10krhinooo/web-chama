@@ -27,7 +27,7 @@ Route::post('/password/reset', [AuthController::class, 'resetPassword'])->name('
 // Route::get('reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('reset.password.form');
 // Route::post('reset-password', [AuthController::class, 'resetPassword'])->name('reset.password');
 
-
+Route::get('/test-insert-token', [AuthController::class, 'testInsertToken']);
 Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
         Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');

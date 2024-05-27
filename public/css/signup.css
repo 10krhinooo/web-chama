@@ -69,6 +69,39 @@ body {
     border-color: #ff006f;
 }
 
+/* .input-box .form-box .registration label {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    color: #fff;
+    pointer-events: none;
+    transition: transform 0.5s, font-size 0.5s;
+} */
+/* .input-box .form-box .registration label {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    color: #fff;
+    pointer-events: none;
+    transition: transform 0.5s, font-size 0.5s;
+}
+
+.form-box.registration label {
+    top: 50px;
+    left: 20px;
+} */
+:root {
+    --label-top: 60px;
+    --label-left: 15px;
+}
+.input-box .form-box .registration label {
+    position: absolute;
+    top: var(--label-top);
+    left: var(--label-left);
+    color: #fff;
+    pointer-events: none;
+    transition: transform 0.5s, font-size 0.5s;
+}
 .input-box label {
     position: absolute;
     top: 10px;

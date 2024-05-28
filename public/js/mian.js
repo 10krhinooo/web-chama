@@ -117,5 +117,25 @@ const marker = new google.maps.Marker({
                 element.style.display = 'none';
             });
         }, 5000);
-    
 
+
+ document.getElementById('password').addEventListener('input', function () {
+        const password = this.value;
+        const lengthRequirement = document.getElementById('length');
+        const specialRequirement = document.getElementById('special');
+
+        // Check password length
+        if (password.length >= 8) {
+            lengthRequirement.classList.add('valid');
+        } else {
+            lengthRequirement.classList.remove('valid');
+        }
+
+        // Check for special character
+        const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+        if (specialCharPattern.test(password)) {
+            specialRequirement.classList.add('valid');
+        } else {
+            specialRequirement.classList.remove('valid');
+        }
+    });

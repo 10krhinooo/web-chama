@@ -117,6 +117,18 @@ body {
     font-size: 0.8em;
     color: #ff006f;
 }
+ .password-requirements {
+     list-style-type: none;
+     padding-left: 0;
+ }
+
+ .password-requirements li {
+     color: red;
+ }
+
+ .password-requirements li.valid {
+     color: green;
+ }
 
 /* Button Styling */
 .btn {

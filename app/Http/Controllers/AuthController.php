@@ -45,7 +45,18 @@ class AuthController extends Controller
         'name' => 'required',
         'id_number' => 'required',
         'email' => 'required|email|unique:users,email',
-        'password' => 'required|min:6|confirmed',
+        'password' =>
+           'required',
+                'string',
+                'min:8', // Minimum length of 8 characters
+                'regex:/[!@#$%^&*(),.?":{}|<>]/' ,
+                'regex:/[A-Z]/'
+
+            // 'password_confirmation' => 'required|same:password',
+        ], [
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.regex' => 'The password must include at least one special character.',
+            'password_confirmation.same' => 'The password confirmation does not match.',
     ], [
         'email.required' => 'The email field is required.',
         'email.email' => 'Please enter a valid email address.',
@@ -153,11 +164,21 @@ class AuthController extends Controller
 
     public function resetPassword(Request $request)
     {
-        $request->validate([
+       $request->validate([
             'token' => 'required',
-            'password' => 'required|min:6|confirmed',
+            'password' => [
+                'required',
+                'string',
+                'min:8', // Minimum length of 8 characters
+                'regex:/[!@#$%^&*(),.?":{}|<>]/', // At least one special character
+                'regex:/[A-Z]/'
+            ],
+            'password_confirmation' => 'required|same:password',
+        ], [
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.regex' => 'The password must include at least one special character.',
+            'password_confirmation.same' => 'The password confirmation does not match.',
         ]);
-
         // \Log::info('Reset request received', $request->all());
 
         // Find the password reset token
@@ -191,7 +212,7 @@ class AuthController extends Controller
         // \Log::info('Password reset successful for user', ['user_id' => $user->id]);
 
         // Send a reset confirmation email
-        // Mail::to($user->email)->send(new ResetConfirmationMail());
+        Mail::to($user->email)->send(new ResetConfirmationMail());
 
         return redirect()->route('login')->with('success', 'Password has been reset.');
     }

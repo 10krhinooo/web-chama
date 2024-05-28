@@ -43,6 +43,13 @@
         </div>
 
 <div class="wrapper">
+    @if(session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+    @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
 
         <div class="form-box .registration">
             <h2>Registration</h2>
@@ -76,6 +83,11 @@
                     <input type="password" name="password" required minlength="8" />
                     <label>Password</label>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        <ul class="password-requirements mt-2">
+                            <li id="length">Minimum 8 characters</li>
+                            <li id="special">At least one special character</li>
+                            <li id="uppercase">At least one uppercase letter</li>
+                        </ul>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
@@ -126,6 +138,34 @@
             element.style.display = 'none';
             });
             }, 5000);
+            document.getElementById('password').addEventListener('input', function () {
+            const password = this.value;
+            const lengthRequirement = document.getElementById('length');
+            const specialRequirement = document.getElementById('special');
+            const uppercaseRequirement = document.getElementById('uppercase');
+
+            // Check password length
+            if (password.length >= 8) {
+            lengthRequirement.classList.add('valid');
+            } else {
+            lengthRequirement.classList.remove('valid');
+            }
+
+            // Check for special character
+            const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+                if (specialCharPattern.test(password)) {
+                specialRequirement.classList.add('valid');
+                } else {
+                specialRequirement.classList.remove('valid');
+                }
+                });
+                const uppercasePattern = /[A-Z]/;
+                if (uppercasePattern.test(password)) {
+                uppercaseRequirement.classList.add('valid');
+                } else {
+                uppercaseRequirement.classList.remove('valid');
+                }
+
             </script>
 </body>
 

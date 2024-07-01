@@ -21,6 +21,7 @@ class User extends Authenticatable
         'id_number',   // Changed from 'ID_number' to 'id_number'
         'email',
         'password',
+        'image_path'
     ];
 
     /**
@@ -41,4 +42,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

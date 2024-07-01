@@ -9,7 +9,7 @@
     <title>Register</title>
 
     <meta name="viewport" conten-t="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/signup.css') }}"> 
 </head>
 
 <body>

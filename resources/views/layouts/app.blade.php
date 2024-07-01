@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logout-confirm.css') }}">
     <!-- Include any additional CSS or meta tags here -->
+
+    
 </head>
  <body>
   
@@ -26,13 +28,15 @@
             clearTimeout(timeout);
             timeout = setTimeout(() => {
                 window.location.href = '{{ route("lock-screen") }}';
-            }, 30000); // 30 seconds
+            }, 1800000); // 30 minutes
         }
 
         window.onload = resetTimeout;
         window.onmousemove = resetTimeout;
         window.onkeypress = resetTimeout;
     </script>
+
+
 
 
     <script src="{{ asset('js/app.js') }}"></script>

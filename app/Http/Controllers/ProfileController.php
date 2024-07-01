@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class ProfileController extends Controller
+class ProfileController extends Controller 
 {
     public function show()
     {
@@ -33,52 +33,48 @@ class ProfileController extends Controller
         $user->update($request->only('name', 'id_number', 'email'));
 
         if ($request->hasFile('profile_photo')) {
-            if ($user->profile_photo_path) {
-                Storage::delete('public/' . $user->profile_photo_path);
+            if ($user->image_path) {
+                Storage::disk('public')->delete($user->image_path);
             }
             $photoPath = $request->file('profile_photo')->store('profile_photos', 'public');
-            $user->profile_photo_path = $photoPath;
+            $user->image_path = $photoPath;
+            $user->save();
         }
 
         return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }
 
-
     public function uploadPhoto(Request $request)
-
     {
-    $user = Auth::user();
+        $user = Auth::user();
 
-    if ($request->hasFile('profile_photo')) {
-        // Delete old profile photo if it exists
-        if ($user->profile_photo_path) {
-            Storage::disk('public')->delete($user->profile_photo_path);
+        if ($request->hasFile('profile_photo')) {
+            if ($user->image_path) {
+                Storage::disk('public')->delete($user->image_path);
+            }
+
+            $photoPath = $request->file('profile_photo')->store('profile_photos', 'public');
+            $user->image_path = $photoPath;
+            $user->save();
+
+            return redirect()->route('profile')->with('success', 'Profile photo updated successfully.');
         }
 
-        // Store the new profile photo
-        $photoPath = $request->file('profile_photo')->store('profile_photos', 'public');
-        $user->profile_photo_path = $photoPath;
-        $user->save();
-
-        return redirect()->route('profile')->with('success', 'Profile photo updated successfully.');
+        return redirect()->route('profile')->with('error', 'Failed to upload photo.');
     }
-
-    return redirect()->route('profile')->with('error', 'Failed to upload photo.');
-    }
-
 
     public function deleteAccount(Request $request)
     {
         $user = Auth::user();
 
-        if ($user->profile_photo_path) {
-            Storage::delete('public/' . $user->profile_photo_path);
+        if ($user->image_path) {
+            Storage::disk('public')->delete($user->image_path);
         }
 
         Auth::logout();
         $user->delete();
 
-        return redirect()->route('login')->with('success', 'Your account has been deleted.');
+        return redirect()->route('login')->with('success', 'Your account has been deleted successfully.');
     }
 
     public function logout(Request $request)

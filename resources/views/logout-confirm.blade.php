@@ -5,11 +5,11 @@
     <h2>Confirm Logout</h2>
     <p>Are you sure you want to log out?</p>
     <div class="logout-confirm-buttons">
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
             <button type="submit">Yes</button>
         </form>
-        <a href="{{ route('profile') }}"><button>No</button></a>
+         <a href="{{ route('profile') }}"><button>No</button></a>
     </div>
 </div>
 @endsection

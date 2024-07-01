@@ -126,6 +126,8 @@ return [
     | since doing so does not grant a meaningful security improvement.
     |
     */
+    'expire_on_close' => true,
+
 
     'cookie' => env(
         'SESSION_COOKIE',

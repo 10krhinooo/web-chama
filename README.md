@@ -5,7 +5,7 @@ Our digital chama management system makes it enables one to create, join, and ma
 
 ## Installation
 
-Install my-project with npm
+Install webchama with npm
 
 ```bash
   npm install webchama 
@@ -15,7 +15,7 @@ Install my-project with npm
 ## Usage/Examples
 
 ```javascript
-import Component from 'my-project'
+import Component from 'webchama'
 
 function App() {
   return <Component />

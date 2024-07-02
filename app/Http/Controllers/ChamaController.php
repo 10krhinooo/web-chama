@@ -1,4 +1,5 @@
-<!-- 
+<?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,7 +10,18 @@ use Illuminate\Support\Str;
 
 class ChamaController extends Controller
 {
-    public function create(Request $request)
+    public function index()
+    {
+        $chamas = Chama::all();
+        return view('chamas.index', compact('chamas'));
+    }
+
+    public function create()
+    {
+        return view('chamas.create');
+    }
+
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -45,7 +57,7 @@ class ChamaController extends Controller
             ]);
         }
 
-        return response()->json($chama);
+        return redirect()->route('chamas.index');
     }
 
     public function join(Request $request)
@@ -79,4 +91,4 @@ class ChamaController extends Controller
             return response()->json(['message' => 'Chama is full'], 403);
         }
     }
-} -->
+}

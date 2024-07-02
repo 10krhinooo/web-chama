@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\LockScreenController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\MemberController;
 
 
 
@@ -61,3 +62,7 @@ route::get('/home2',[TemplateController::class,'index']);
 
 // route::get('/profileLayout',[ProfileController2::class,'profile']);
 // Route::get('/home2', [HomeController::class, 'index'])->name('home2');
+
+Route::resource('chamas', ChamaController::class);
+Route::post('chamas/join', [ChamaController::class, 'join'])->name('chamas.join');
+Route::resource('members', MemberController::class);

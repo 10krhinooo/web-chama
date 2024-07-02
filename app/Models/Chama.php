@@ -1,4 +1,5 @@
-<!-- 
+<?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,4 +15,4 @@ class Chama extends Model
     {
         return $this->hasMany(Member::class);
     }
-} -->
+}

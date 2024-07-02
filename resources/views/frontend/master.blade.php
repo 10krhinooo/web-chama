@@ -50,8 +50,11 @@ https://templatemo.com/tm-574-mexant
                           <li class="scroll-to-section"><a href="#services">Services</a></li>
                           {{-- <li class="scroll-to-section"><a href="#about">About</a></li> --}}
                         
-                          {{-- <li class="scroll-to-section"><a href="{{ route('profile') }}">Profile</a></li> --}}
+                          <li class="scroll-to-section"><a href="{{ route('profile') }}">Profile</a></li>
                           <li class="scroll-to-section"><a href="{{ route('login') }}">LogIn</a></li>
+
+                          {{-- <li class="scroll-to-section"><a href="{{ route('login') }}">LogIn</a></li> --}}
+
 
                         
                           
@@ -202,8 +205,8 @@ https://templatemo.com/tm-574-mexant
           <div class="service-item">
             <i class="fas fa-puzzle-piece"></i>
             <h4>Easy Administration & Accounting</h4>
-            <p>WebChama will make the administration of the collective and accounting
-                 for the contributions
+            <p>WebChama will make the administration of the collective and
+                 accounting for the contributions
                  easier than ever.</p>
           </div>
         </div>

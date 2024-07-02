@@ -7,6 +7,7 @@
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logout-confirm.css') }}">
+
     <!-- Include any additional CSS or meta tags here -->
 
     

@@ -1,34 +1,121 @@
 
+
 # Webchama 
 
 Our digital chama management system makes it enables one to create, join, and manage chamas. Track finances, communicate with members, and collaborate efficiently. 
 
+
+
+
 ## Installation
 
-Install webchama with npm
+Prequisites of installation
+
+[PHP ](https://www.php.net/downloads.php)
+
+[Composer](https://getcomposer.org/download/)
+
+[Laravel](https://laravel.com/docs/10.x/installation)
+
+[MySQL ](https://dev.mysql.com/downloads/installer/)
+
+[Node.js & npm ](https://nodejs.org/en/download/)
+
+[Git](https://git-scm.com/downloads)
+
+[Filament](https://filamentphp.com/)
+## Run Locally
+
+Clone the project
 
 ```bash
-  npm install webchama 
+  git clone  https://github.com/MercyWangondu/webchama
+```
+
+Go to the project directory
+
+```bash
   cd webchama
 ```
-    
-## Usage/Examples
 
-```javascript
-import Component from 'webchama'
+Install dependencies
 
-function App() {
-  return <Component />
-}
+```bash
+  npm install
 ```
 
+Start the server
 
+```bash
+  npm run start
+```
 ## Used By
 
 This project is used by the following companies:
 
 - People already present in chamas and a looking for a way to continue to manage their chama but digitally
 - People forming chamas from scratch and looking for a way to manage their chamas
+
+## Features
+
+
+- User registration and authentication
+- Create and manage Chamas
+- Join existing Chamas with a unique code
+- Manage member roles and permissions
+- Track contributions and financial records
+- Generate financial reports
+- Notifications and alerts for events and contributions
+- Profile management with photo upload and crop functionality
+- Change password with email verification
+- Lock screen functionality
+- Secure logout
+- Light/dark mode toggle
+- Live previews of data
+- Fullscreen mode for enhanced viewing## API Reference
+
+#### Get all items
+
+```http
+POST /api/register
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. User's name  |
+| `email` | `string` | **Required**. User's email  |
+| `password` | `string` | **Required**.password  |
+| `id_number` | `string` | **Required**.ID Number  |
+
+
+```http
+  POST /api/login
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required**.User's email  |
+| `password` | `string` | **Required**.User's password  |
+
+
+```http
+   Gets all chamas
+   GET /api/chamas
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `api_key`      | `string` | **Required**. Your API key|
+
+```http
+
+   GET /api/chamas/${id}
+
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. IDof chama to fetch|
 
 
 ## Roadmap
@@ -84,24 +171,6 @@ Additional Browser Support
 Ensure compatibility with all major browsers (e.g., Chrome, Firefox, Safari, Edge)
 
 
-## Features
-
-
-- User registration and authentication
-- Create and manage Chamas
-- Join existing Chamas with a unique code
-- Manage member roles and permissions
-- Track contributions and financial records
-- Generate financial reports
-- Notifications and alerts for events and contributions
-- Profile management with photo upload and crop functionality
-- Change password with email verification
-- Lock screen functionality
-- Secure logout
-- Light/dark mode toggle
-- Live previews of data
-- Fullscreen mode for enhanced viewing
-
 
 ## Acknowledgements
 
@@ -109,81 +178,9 @@ Ensure compatibility with all major browsers (e.g., Chrome, Firefox, Safari, Edg
  - [Dashboard Template](https://templatemo.com/tm-574-mexant)
  
 
-## Run Locally
+## Documentation
 
-Clone the project
-
-```bash
-  git clone  https://github.com/MercyWangondu/webchama
-```
-
-Go to the project directory
-
-```bash
-  cd webchama
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-
-## API Reference
-
-#### Get all items
-
-```http
-POST /api/register
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `name` | `string` | **Required**. User's name  |
-| `email` | `string` | **Required**. User's email  |
-| `password` | `string` | **Required**.password  |
-| `id_number` | `string` | **Required**.ID Number  |
-
-
-```http
-  POST /api/login
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `email` | `string` | **Required**.User's email  |
-| `password` | `string` | **Required**.User's password  |
-
-
-```http
-   Gets all chamas
-   GET /api/chamas
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `api_key`      | `string` | **Required**. Your API key|
-
-```http
-
-   GET /api/chamas/${id}
-
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. IDof chama to fetch|
-
-
-
-
+- [Documentation](https://1drv.ms/w/c/7e09951e873dc495/Ed7OTHDcQFRHowZOTtvyT5ABlw1b6zLWbbJX6IdqRAFz1w?e=ig2Bnz)
 
 ## Running Tests
 
@@ -191,11 +188,3 @@ To run tests, run the following command
 
 ```bash
   php artisan serve 
-```
-
-
-## Documentation
-
-[Documentation](https://1drv.ms/w/c/7e09951e873dc495/Ed7OTHDcQFRHowZOTtvyT5ABlw1b6zLWbbJX6IdqRAFz1w?e=ig2Bnz
-)
-

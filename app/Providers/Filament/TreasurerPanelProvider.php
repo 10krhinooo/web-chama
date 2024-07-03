@@ -26,11 +26,11 @@ class TreasurerPanelProvider extends PanelProvider
         return $panel
             ->id('treasurer')
             ->path('treasurer')
-            // ->login()
-            ->userMenuItems([
+            ->login()
+             ->userMenuItems([
                 MenuItem::make()
-                ->label('Admin')
-                ->icon('heroicon-o-user')
+                ->label('Administrator')
+                ->icon('heroicon-o-user-circle')
                 ->url('/admin')
             ])
             ->colors([

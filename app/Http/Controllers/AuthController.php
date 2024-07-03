@@ -20,6 +20,7 @@ use Carbon\Carbon;
 
 class AuthController extends Controller
 {
+
     public function signIn(Request $request)
     {
         $request->validate([
@@ -30,13 +31,9 @@ class AuthController extends Controller
         $credentials = $request->only('id_number', 'password');
 
         if (Auth::attempt($credentials)) {
-            // $user = User::where('id_number', $request->id_number)->first();
-
             $request->session()->regenerate();
-            return redirect()->intended(route('dashboard'))
+            return redirect()->intended(route('profile'))
                 ->with('success', 'Logged in successfully');
-        
-               
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials');
         }

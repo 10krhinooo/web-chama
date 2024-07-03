@@ -30,18 +30,17 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-
             ->default()
+            ->profile()
             ->id('admin')
             ->path('admin')
-            ->login()
-            ->registration()
             ->userMenuItems([
                 MenuItem::make()
                 ->label('Treasurer')
                 ->icon('heroicon-o-user-circle')
                 ->url('/treasurer')
             ])
+            ->login()
             ->colors([
                 'primary' => Color::Orange,
                  'danger' => Color::Rose,

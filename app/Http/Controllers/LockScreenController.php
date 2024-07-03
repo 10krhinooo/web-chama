@@ -21,7 +21,7 @@ class LockScreenController extends Controller
         ]);
 
         $user = Auth::user();
-        
+
         if (Hash::check($request->password, $user->password)) {
             session(['locked' => false]);
             return redirect()->route('profile')->with('success', 'Session unlocked.');

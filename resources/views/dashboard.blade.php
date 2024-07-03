@@ -1,12 +1,9 @@
-@extends('profile.profile-layout')
-@section('profile')
- <div class="card">
-  <div class="card-header">
-    Dashboard
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Welcome to your profile</h5>
-  </div>
-</div>
+<!-- resources/views/dashboard.blade.php -->
+@extends('layouts.navBar')
 
+@section('title', 'Dashboard')
+
+@section('content')
+    <h1>Chamas Present</h1>
+    <p></p>
 @endsection

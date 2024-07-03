@@ -1,4 +1,4 @@
-<header class="headerStyle">
+{{-- <header class="headerStyle">
 <div class="container">
     <nav class="site-nav">
         <ul>
@@ -210,4 +210,52 @@
     .tooltip:hover .tooltiptext {
     visibility: visible;
     }
-    </style>
+    </style> --}}
+
+<!-- resources/views/layouts/app.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'WEBCHAMA')</title>
+    <link rel="stylesheet" href="{{ asset('css/navBar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMSmP5AB5F11Vq5Mk1lVvYtka3N5UJrgVEX0aHG" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">WEBCHAMA</a>
+        </div>
+        <div class="navbar-links"></div>
+        <div class="navbar-search">
+            <input type="text" placeholder="Search...">
+            <button type="button" class="search-button">Search</button>
+        </div>
+        <div class="navbar-profile">
+            <div class="profile-dropdown">
+                <button class="profile-button">
+                    <img src="{{ asset('images/profile.jpg') }}" alt="Profile" class="profile-img">
+                    <span class="profile-name">
+                        @auth
+                            {{ session('userName') ?? 'Guest' }}
+                        @endauth
+                    </span>
+                </button>
+                <div class="profile-menu">
+                    <a href="{{ route('profile') }}"><i class="fas fa-user-times"></i> Edit Profile</a>
+                    <a href="{{ route('lock-screen') }}"><i class="fas fa-lock"></i> Lock Screen</a>
+                    <a href="{{ route('logout.confirm') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+            <div class="notification-icon">
+                <span class="notification-count">3</span>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @yield('content')
+    </div>
+    <script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>

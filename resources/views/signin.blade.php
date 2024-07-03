@@ -68,6 +68,10 @@
                     <a href="{{route('forgot.password.form')}}">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">login</button>
+                {{-- <button type="submit" class="btn">
+                    Login
+                    <a href="{{ route('dashboard') }}"></a> 
+                </button> --}}
                 <div class="login-register">
                     <p>
                         Don't have an account?<a href="{{route('register')}}" class="register-link">Register</a>

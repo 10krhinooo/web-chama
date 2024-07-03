@@ -74,6 +74,157 @@ This project is used by the following companies:
 - Live previews of data
 - Fullscreen mode for enhanced viewing## API Reference
 
+- ##### File Structure
+- 
+- C:.
+|
+|
++---app
+|   +---Filament
+|   |   +---Pages
+|   |   |   \---Tenancy
+|   |   |           EditTeamProfile.php
+|   |   |           RegisterTeam.php
+|   |   |
+|   |   +---Resources
+|   |   |   |
+|   |   |   +---ChamaResource
+|   |   |   |
+|   |   |   |
+|   |   |   +---ContributionsResource
+|   |   |   |
+|   |   |   +---MembersResource
+|   |   |   |
+|   |   |   |
+|   |   |   \---UserResource
+|   |   |
+|   |   |
+|   |   +---Treasurer
+|   |   |   +---Resources
+|   |   |   |
+|   |   |   \---Widgets
+|   |   |
+|   |   |
+|   |   \---Widgets
+|   |
+|   +---Http
+|   |   \---Controllers
+|   |
+|   +---Mail
+|   |
+|   +---Models
+|   |
+|   |
+|   \---Providers
+|       |   AppServiceProvider.php
+|       |
+|       \---Filament
+|               AdminPanelProvider.php
+|               TreasurerPanelProvider.php
+|
++---bootstrap
+|   |
+|
++---config
+|
+|
++---database
+|   +---factories
+|   |
+|   |
+|   +---migrations
+|   |
+|   |
+|   \---seeders
+|
+|
++---public
+|   |
+|   |
+|   +---assets
+|   |
+|   |   +---images
+|   |   |
+|   |   |
+|   |   +---js
+|   |   |
+|   |   \---webfonts
+|   |
+|   +---css
+|   |   |
+|   |
+|   +---js
+|   |
+|   \---vendor
+|
+|       \---jquery
+|
++---resources
+|   +---css
+|   |
+|   |
+|   +---js
+|   |
+|   |
+|   +---sass
+|   |
+|   |
+|   \---views
+|       |
+|       |
+|       +---alert
+|       |
+|       |
+|       +---auth
+|       |   |
+|       |   \---passwords
+|       |
+|       |
+|       +---chamas
+|       |
+|       |
+|       +---components
+|       |
+|       |
+|       +---emails
+|       |
+|       +---frontend
+|       |
+|       |
+|       +---layouts
+|       |
+|       |
+|       \---profile
+|
++---routes
+|
+|
++---storage
+|   +---app
+|   |
+|   +---framework
+|   |   |
+|   |   +---cache
+|   |   |
+|   |   |
+|   |   +---sessions
+|   |   |
+|   |   |
+|   |   +---testing
+|   |   |
+|   |   \---views
+|   |
+|   |
+|   \---logs
+|
+|
+\---tests
+    |
+    +---Feature
+    |
+
+
+
 #### Get all items
 
 ```http

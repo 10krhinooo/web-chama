@@ -42,6 +42,12 @@ Install dependencies
 
 ```bash
   npm install
+composer install
+```
+Install enviroment key
+
+```bash
+php artisan key:generate
 ```
 
 Start the server

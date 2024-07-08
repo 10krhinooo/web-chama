@@ -9,7 +9,7 @@ Our digital chama management system makes it enables one to create, join, and ma
 
 ## Installation
 
-Prequisites of installation
+Install webchama with npm
 
 [PHP ](https://www.php.net/downloads.php)
 
@@ -187,4 +187,157 @@ Ensure compatibility with all major browsers (e.g., Chrome, Firefox, Safari, Edg
 To run tests, run the following command
 
 ```bash
-  php artisan serve 
+ php artisan serve
+
+
+
+## File Tree Structure 
+
+
+C:.
+|
+|
++---app
+|   +---Filament
+|   |   +---Pages
+|   |   |   \---Tenancy
+|   |   |           EditTeamProfile.php
+|   |   |           RegisterTeam.php
+|   |   |
+|   |   +---Resources
+|   |   |   |
+|   |   |   +---ChamaResource
+|   |   |   |
+|   |   |   |
+|   |   |   +---ContributionsResource
+|   |   |   |
+|   |   |   +---MembersResource
+|   |   |   |
+|   |   |   |
+|   |   |   \---UserResource
+|   |   |
+|   |   |
+|   |   +---Treasurer
+|   |   |   +---Resources
+|   |   |   |
+|   |   |   \---Widgets
+|   |   |
+|   |   |
+|   |   \---Widgets
+|   |
+|   +---Http
+|   |   \---Controllers
+|   |
+|   +---Mail
+|   |
+|   +---Models
+|   |
+|   |
+|   \---Providers
+|       |   AppServiceProvider.php
+|       |
+|       \---Filament
+|               AdminPanelProvider.php
+|               TreasurerPanelProvider.php
+|
++---bootstrap
+|   |
+|
++---config
+|
+|
++---database
+|   +---factories
+|   |
+|   |
+|   +---migrations
+|   |
+|   |
+|   \---seeders
+|
+|
++---public
+|   |
+|   |
+|   +---assets
+|   |
+|   |   +---images
+|   |   |
+|   |   |
+|   |   +---js
+|   |   |
+|   |   \---webfonts
+|   |
+|   +---css
+|   |   |
+|   |
+|   +---js
+|   |
+|   \---vendor
+|
+|       \---jquery
+|
++---resources
+|   +---css
+|   |
+|   |
+|   +---js
+|   |
+|   |
+|   +---sass
+|   |
+|   |
+|   \---views
+|       |
+|       |
+|       +---alert
+|       |
+|       |
+|       +---auth
+|       |   |
+|       |   \---passwords
+|       |
+|       |
+|       +---chamas
+|       |
+|       |
+|       +---components
+|       |
+|       |
+|       +---emails
+|       |
+|       +---frontend
+|       |
+|       |
+|       +---layouts
+|       |
+|       |
+|       \---profile
+|
++---routes
+|
+|
++---storage
+|   +---app
+|   |
+|   +---framework
+|   |   |
+|   |   +---cache
+|   |   |
+|   |   |
+|   |   +---sessions
+|   |   |
+|   |   |
+|   |   +---testing
+|   |   |
+|   |   \---views
+|   |
+|   |
+|   \---logs
+|
+|
+\---tests
+    |
+    +---Feature
+    |
+
